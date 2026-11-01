@@ -1,0 +1,49 @@
+```rust
+use ttfun::*;
+
+// Prepare font, font size, padding, rescale factor, ...
+let iosevka = FontArc::try_from_vec(IOSEVKA.to_vec()).expect("font");
+let font_size = 18.0;
+let padding = Padding::all(0);
+let rescale = Rescale::parse("1").expect("rescale");
+let invert = false;
+
+// Render text to font image
+let img = text_to_image(
+    "ttfun",
+    &iosevka,
+    font_size,
+    &rescale,
+    &padding,
+)
+.expect("image");
+
+// Render font image to `full` style
+let full = Style::Full.render(&img, invert, 180, "\u{2588}").expect("render");
+
+assert_eq!(
+    full,
+    "\
+                                      
+                                      
+                                      
+  ██      █       ██                  
+  ██     ██      ████                 
+  ██     ██      █                    
+ █████  █████    █     █   █  █ ██    
+ █████  █████  ██████ ██   █  █████   
+  ██     ██      █    ██   █  █   █   
+  ██     ██      █    ██   █  █   █   
+  ██     ██      █    ██   █  █   █   
+  ██  █  ██  █   █    ██   █  █   █   
+  ██ ██   █ ██   █     █  ██  █   █   
+   ███    ███    █     █████  █   █   
+                                      
+                                      
+                                      
+                                      
+\
+    ",
+);
+```
+
