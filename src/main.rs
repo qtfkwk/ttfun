@@ -75,11 +75,11 @@ struct Args {
     )]
     rescale: String,
 
-    /// Threshold(s) used for non `*-color` styles (0-255)
+    /// Threshold(s) (0-255); not used for `full-color` and `full-shade` styles
     #[arg(short = 't', value_name = "U8", default_value = "180")]
     thresholds: Vec<u8>,
 
-    /// Invert foreground/background "colors"; `-nn`: regular & inverted, `-nnn`: inverted & regular
+    /// Invert colors; `-nn`: regular & inverted, `-nnn`: inverted & regular
     #[arg(short = 'n', action = ArgAction::Count)]
     invert: u8,
 

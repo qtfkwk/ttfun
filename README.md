@@ -30,10 +30,10 @@ Options:
                  `full-color` styles [default: █]
   -r <STR>       Rescale image by factor `WIDTHxHEIGHT` where `WIDTH` and
                  `HEIGHT` are floats > 0 [default: 1x1]
-  -t <U8>        Threshold(s) used for non `*-color` styles (0-255) [default:
-                 180]
-  -n...          Invert foreground/background "colors"; `-nn`: regular &
-                 inverted, `-nnn`: inverted & regular
+  -t <U8>        Threshold(s) (0-255); not used for `full-color` and
+                 `full-shade` styles [default: 180]
+  -n...          Invert colors; `-nn`: regular & inverted, `-nnn`: inverted &
+                 regular
   -d             Use the demo file as the default input
   -v             Enable verbose Markdown output
   -R             Print readme
@@ -103,13 +103,13 @@ Options:
           [default: 1x1]
 
   -t <U8>
-          Threshold(s) used for non `*-color` styles (0-255)
+          Threshold(s) (0-255); not used for `full-color` and `full-shade`
+          styles
           
           [default: 180]
 
   -n...
-          Invert foreground/background "colors"; `-nn`: regular & inverted,
-          `-nnn`: inverted & regular
+          Invert colors; `-nn`: regular & inverted, `-nnn`: inverted & regular
 
   -d
           Use the demo file as the default input
@@ -134,7 +134,7 @@ ttfun -V
 ```
 
 ```text
-ttfun 0.2.0
+ttfun 0.2.1
 ```
 
 ## Examples
