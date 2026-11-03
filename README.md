@@ -11,14 +11,14 @@ ttfun -h
 ```text
 Render text and images to Unicode characters
 
-Usage: ttfun [OPTIONS] [PATH]...
+Usage: ttfun [OPTIONS] [GLOB]...
 
 Arguments:
-  [PATH]...  Input file(s)
+  [GLOB]...  Input file glob(s) or `-` for stdin
 
 Options:
   -i <STRING>    Input string(s)
-  -I <PATH>      Input image(s)
+  -I <GLOB>      Input image glob(s) or `-` for stdin
   -o <DIRPATH>   Save image(s) to PNG files in a directory
   -f <PATH>      Font file(s) (ttf); Built-in: `iosevka`, `eb-garamond`
                  [default: iosevka]
@@ -48,18 +48,18 @@ ttfun --help
 ```text
 Render text and images to Unicode characters
 
-Usage: ttfun [OPTIONS] [PATH]...
+Usage: ttfun [OPTIONS] [GLOB]...
 
 Arguments:
-  [PATH]...
-          Input file(s)
+  [GLOB]...
+          Input file glob(s) or `-` for stdin
 
 Options:
   -i <STRING>
           Input string(s)
 
-  -I <PATH>
-          Input image(s)
+  -I <GLOB>
+          Input image glob(s) or `-` for stdin
 
   -o <DIRPATH>
           Save image(s) to PNG files in a directory
@@ -134,7 +134,7 @@ ttfun -V
 ```
 
 ```text
-ttfun 0.1.1
+ttfun 0.2.0
 ```
 
 ## Examples

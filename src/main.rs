@@ -10,9 +10,13 @@ use {
     anyhow::{Result, anyhow},
     clap::{ArgAction, CommandFactory, Parser, error::ErrorKind},
     clap_cargo::style::CLAP_STYLING,
-    image::RgbImage,
+    glob::glob,
+    image::{ImageReader, RgbImage},
     indexmap::{IndexMap, IndexSet},
-    std::path::{Path, PathBuf},
+    std::{
+        io::Read,
+        path::{Path, PathBuf},
+    },
 };
 
 #[cfg(unix)]
@@ -30,17 +34,17 @@ const README: &str = include_str!("../README.md");
 #[derive(Parser)]
 #[command(about, version, max_term_width = 80, styles = CLAP_STYLING)]
 struct Args {
-    /// Input file(s)
-    #[arg(value_name = "PATH")]
-    input_files: Vec<PathBuf>,
+    /// Input file glob(s) or `-` for stdin
+    #[arg(value_name = "GLOB")]
+    input_files: Vec<String>,
 
     /// Input string(s)
     #[arg(short = 'i', value_name = "STRING")]
     input_strings: Vec<String>,
 
-    /// Input image(s)
-    #[arg(short = 'I', value_name = "PATH")]
-    input_images: Vec<PathBuf>,
+    /// Input image glob(s) or `-` for stdin
+    #[arg(short = 'I', value_name = "GLOB")]
+    input_images: Vec<String>,
 
     /// Save image(s) to PNG files in a directory
     #[arg(short = 'o', value_name = "DIRPATH")]
@@ -126,6 +130,8 @@ fn main() -> Result<()> {
             .error(ErrorKind::TooManyValues, "-nnnn+ is not supported")
             .exit(),
     };
+    let input_files = globs(&args.input_files)?;
+    let input_images = globs(&args.input_images)?;
 
     // Load fonts
     let mut fonts = IndexMap::new();
@@ -152,8 +158,14 @@ fn main() -> Result<()> {
     for s in &args.input_strings {
         inputs.insert(s.trim_matches('\n').into());
     }
-    for path in &args.input_files {
-        inputs.insert(std::fs::read_to_string(path)?.trim_matches('\n').into());
+    for path in &input_files {
+        if path == "-" {
+            let mut buffer = String::new();
+            std::io::stdin().read_to_string(&mut buffer)?;
+            inputs.insert(buffer.trim_matches('\n').into());
+        } else {
+            inputs.insert(std::fs::read_to_string(path)?.trim_matches('\n').into());
+        }
     }
     if inputs.is_empty() && args.input_images.is_empty() {
         if args.demo {
@@ -204,15 +216,31 @@ fn main() -> Result<()> {
     // Iterate images
     if args.output_dir.is_none() {
         let o = inputs.len();
-        for (i, path) in args.input_images.iter().enumerate() {
+        for (i, path) in input_images.iter().enumerate() {
             vprintln!(v, "# Input {} `{}`\n\n## ...\n", i + o, path.display());
-            let img = rescale.image(image::open(path)?.to_rgb8());
+            let img = if path == "-" {
+                let mut buffer = Vec::new();
+                std::io::stdin().read_to_end(&mut buffer)?;
+
+                let cursor = std::io::Cursor::new(buffer);
+
+                ImageReader::new(cursor)
+                    .with_guessed_format()?
+                    .decode()?
+                    .to_rgb8()
+            } else {
+                image::open(path)?.to_rgb8()
+            };
+
+            let img = rescale.image(img);
             render_all(&styles, &args.thresholds, inverts, &args.full_char, &img, v)?;
         }
     }
 
     Ok(())
 }
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 fn render_all(
     styles: &IndexSet<Style>,
@@ -254,4 +282,20 @@ fn render_all(
     }
 
     Ok(())
+}
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+fn globs(inputs: &[String]) -> Result<IndexSet<PathBuf>> {
+    inputs.iter().try_fold(IndexSet::new(), |mut r, x| {
+        if x == "-" {
+            r.insert(x.into());
+        } else {
+            for file in glob(x)? {
+                r.insert(file?);
+            }
+        }
+
+        Ok(r)
+    })
 }
