@@ -26,7 +26,7 @@ use pager2::Pager;
 // Constants
 
 const DEMO: &str = include_str!("../demo.txt");
-const README: &str = include_str!("../README.md");
+const README: &str = include_str!("../README-TERM.md");
 
 //--------------------------------------------------------------------------------------------------
 // Structs

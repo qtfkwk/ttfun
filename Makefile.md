@@ -76,6 +76,18 @@ cargo build --release
 kapow {0} >{target}
 ```
 
+# `README-TERM.md`
+
+* `t/README-TERM.md`
+* `Cargo.toml`
+* `CHANGELOG.md`
+* `**/*.rs`
+
+```
+cargo build --release
+kapow {0} >{target}
+```
+
 # doc
 
 ```

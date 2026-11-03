@@ -36,9 +36,10 @@ ttfun -V
 ttfun
 ```
 
-```text
-!run:../target/release/ttfun
-```
+!run:termframe -o img/ttfun.svg --font-family Iosevka -W 80 -H auto --line-height 1 --window false -- ../target/release/ttfun 2>/dev/null
+!run:resvg img/ttfun.svg img/ttfun.png
+!run:rm img/ttfun.svg
+![](img/ttfun.png)
 
 ### Font `eb-garamond` 36
 
@@ -46,9 +47,10 @@ ttfun
 ttfun -f eb-garamond -s 36
 ```
 
-```text
-!run:../target/release/ttfun -f eb-garamond -s 36
-```
+!run:termframe -o img/ttfun_-f_eb-garamond_-s_36.svg --font-family Iosevka -W 80 -H auto --line-height 1 --window false -- ../target/release/ttfun -f eb-garamond -s 36 2>/dev/null
+!run:resvg img/ttfun_-f_eb-garamond_-s_36.svg img/ttfun_-f_eb-garamond_-s_36.png
+!run:rm img/ttfun_-f_eb-garamond_-s_36.svg
+![](img/ttfun_-f_eb-garamond_-s_36.png)
 
 ### Rescale `2x1`
 
@@ -56,9 +58,10 @@ ttfun -f eb-garamond -s 36
 ttfun -r 2x1
 ```
 
-```text
-!run:../target/release/ttfun -r 2x1
-```
+!run:termframe -o img/ttfun_-r_2x1.svg --font-family Iosevka -W 80 -H auto --line-height 1 --window false -- ../target/release/ttfun -r 2x1 2>/dev/null
+!run:resvg img/ttfun_-r_2x1.svg img/ttfun_-r_2x1.png
+!run:rm img/ttfun_-r_2x1.svg
+![](img/ttfun_-r_2x1.png)
 
 ### Rescale `3x1`
 
@@ -66,9 +69,10 @@ ttfun -r 2x1
 ttfun -r 3x1
 ```
 
-```text
-!run:../target/release/ttfun -r 3x1
-```
+!run:termframe -o img/ttfun_-r_3x1.svg --font-family Iosevka -W 80 -H auto --line-height 1 --window false -- ../target/release/ttfun -r 3x1 2>/dev/null
+!run:resvg img/ttfun_-r_3x1.svg img/ttfun_-r_3x1.png
+!run:rm img/ttfun_-r_3x1.svg
+![](img/ttfun_-r_3x1.png)
 
 ### Invert
 
@@ -76,9 +80,10 @@ ttfun -r 3x1
 ttfun -n
 ```
 
-```text
-!run:../target/release/ttfun -n
-```
+!run:termframe -o img/ttfun_-n.svg --font-family Iosevka -W 80 -H auto --line-height 1 --window false -- ../target/release/ttfun -n 2>/dev/null
+!run:resvg img/ttfun_-n.svg img/ttfun_-n.png
+!run:rm img/ttfun_-n.svg
+![](img/ttfun_-n.png)
 
 ### Style `octant`
 
@@ -86,9 +91,13 @@ ttfun -n
 ttfun -S octant
 ```
 
-```text
-!run:../target/release/ttfun -S octant
-```
+!run:termframe -o img/ttfun_-S_octant.svg --font-family Iosevka -W 80 -H auto --line-height 1 --window false -- ../target/release/ttfun -S octant 2>/dev/null
+!run:resvg img/ttfun_-S_octant.svg img/ttfun_-S_octant.png
+!run:rm img/ttfun_-S_octant.svg
+![](img/ttfun_-S_octant.png)
+
+> [!NOTE]
+> This is the default style.
 
 ### Style `octant` inverted
 
@@ -96,9 +105,10 @@ ttfun -S octant
 ttfun -S octant -n
 ```
 
-```text
-!run:../target/release/ttfun -S octant -n
-```
+!run:termframe -o img/ttfun_-S_octant_-n.svg --font-family Iosevka -W 80 -H auto --line-height 1 --window false -- ../target/release/ttfun -S octant -n 2>/dev/null
+!run:resvg img/ttfun_-S_octant_-n.svg img/ttfun_-S_octant_-n.png
+!run:rm img/ttfun_-S_octant_-n.svg
+![](img/ttfun_-S_octant_-n.png)
 
 ### Style `octant-sep`
 
@@ -106,9 +116,10 @@ ttfun -S octant -n
 ttfun -S octant-sep
 ```
 
-```text
-!run:../target/release/ttfun -S octant-sep
-```
+!run:termframe -o img/ttfun_-S_octant-sep.svg --font-family Iosevka -W 80 -H auto --line-height 1 --window false -- ../target/release/ttfun -S octant-sep 2>/dev/null
+!run:resvg img/ttfun_-S_octant-sep.svg img/ttfun_-S_octant-sep.png
+!run:rm img/ttfun_-S_octant-sep.svg
+![](img/ttfun_-S_octant-sep.png)
 
 ### Style `octant-sep` inverted
 
@@ -116,9 +127,10 @@ ttfun -S octant-sep
 ttfun -S octant-sep -n
 ```
 
-```text
-!run:../target/release/ttfun -S octant-sep -n
-```
+!run:termframe -o img/ttfun_-S_octant-sep_-n.svg --font-family Iosevka -W 80 -H auto --line-height 1 --window false -- ../target/release/ttfun -S octant-sep -n 2>/dev/null
+!run:resvg img/ttfun_-S_octant-sep_-n.svg img/ttfun_-S_octant-sep_-n.png
+!run:rm img/ttfun_-S_octant-sep_-n.svg
+![](img/ttfun_-S_octant-sep_-n.png)
 
 ### Style `sextant`
 
@@ -126,9 +138,10 @@ ttfun -S octant-sep -n
 ttfun -S sextant
 ```
 
-```text
-!run:../target/release/ttfun -S sextant
-```
+!run:termframe -o img/ttfun_-S_sextant.svg --font-family Iosevka -W 80 -H auto --line-height 1 --window false -- ../target/release/ttfun -S sextant 2>/dev/null
+!run:resvg img/ttfun_-S_sextant.svg img/ttfun_-S_sextant.png
+!run:rm img/ttfun_-S_sextant.svg
+![](img/ttfun_-S_sextant.png)
 
 ### Style `sextant` inverted
 
@@ -136,9 +149,10 @@ ttfun -S sextant
 ttfun -S sextant -n
 ```
 
-```text
-!run:../target/release/ttfun -S sextant -n
-```
+!run:termframe -o img/ttfun_-S_sextant_-n.svg --font-family Iosevka -W 80 -H auto --line-height 1 --window false -- ../target/release/ttfun -S sextant -n 2>/dev/null
+!run:resvg img/ttfun_-S_sextant_-n.svg img/ttfun_-S_sextant_-n.png
+!run:rm img/ttfun_-S_sextant_-n.svg
+![](img/ttfun_-S_sextant_-n.png)
 
 ### Style `sextant-sep`
 
@@ -146,9 +160,10 @@ ttfun -S sextant -n
 ttfun -S sextant-sep
 ```
 
-```text
-!run:../target/release/ttfun -S sextant-sep
-```
+!run:termframe -o img/ttfun_-S_sextant-sep.svg --font-family Iosevka -W 80 -H auto --line-height 1 --window false -- ../target/release/ttfun -S sextant-sep 2>/dev/null
+!run:resvg img/ttfun_-S_sextant-sep.svg img/ttfun_-S_sextant-sep.png
+!run:rm img/ttfun_-S_sextant-sep.svg
+![](img/ttfun_-S_sextant-sep.png)
 
 ### Style `sextant-sep` inverted
 
@@ -156,9 +171,10 @@ ttfun -S sextant-sep
 ttfun -S sextant-sep -n
 ```
 
-```text
-!run:../target/release/ttfun -S sextant-sep -n
-```
+!run:termframe -o img/ttfun_-S_sextant-sep_-n.svg --font-family Iosevka -W 80 -H auto --line-height 1 --window false -- ../target/release/ttfun -S sextant-sep -n 2>/dev/null
+!run:resvg img/ttfun_-S_sextant-sep_-n.svg img/ttfun_-S_sextant-sep_-n.png
+!run:rm img/ttfun_-S_sextant-sep_-n.svg
+![](img/ttfun_-S_sextant-sep_-n.png)
 
 ### Style `quadrant`
 
@@ -166,9 +182,10 @@ ttfun -S sextant-sep -n
 ttfun -S quadrant
 ```
 
-```text
-!run:../target/release/ttfun -S quadrant
-```
+!run:termframe -o img/ttfun_-S_quadrant.svg --font-family Iosevka -W 80 -H auto --line-height 1 --window false -- ../target/release/ttfun -S quadrant 2>/dev/null
+!run:resvg img/ttfun_-S_quadrant.svg img/ttfun_-S_quadrant.png
+!run:rm img/ttfun_-S_quadrant.svg
+![](img/ttfun_-S_quadrant.png)
 
 ### Style `quadrant` inverted
 
@@ -176,9 +193,10 @@ ttfun -S quadrant
 ttfun -S quadrant -n
 ```
 
-```text
-!run:../target/release/ttfun -S quadrant -n
-```
+!run:termframe -o img/ttfun_-S_quadrant_-n.svg --font-family Iosevka -W 80 -H auto --line-height 1 --window false -- ../target/release/ttfun -S quadrant -n 2>/dev/null
+!run:resvg img/ttfun_-S_quadrant_-n.svg img/ttfun_-S_quadrant_-n.png
+!run:rm img/ttfun_-S_quadrant_-n.svg
+![](img/ttfun_-S_quadrant_-n.png)
 
 ### Style `quadrant-sep`
 
@@ -186,9 +204,10 @@ ttfun -S quadrant -n
 ttfun -S quadrant-sep
 ```
 
-```text
-!run:../target/release/ttfun -S quadrant-sep
-```
+!run:termframe -o img/ttfun_-S_quadrant-sep.svg --font-family Iosevka -W 80 -H auto --line-height 1 --window false -- ../target/release/ttfun -S quadrant-sep 2>/dev/null
+!run:resvg img/ttfun_-S_quadrant-sep.svg img/ttfun_-S_quadrant-sep.png
+!run:rm img/ttfun_-S_quadrant-sep.svg
+![](img/ttfun_-S_quadrant-sep.png)
 
 ### Style `quadrant-sep` inverted
 
@@ -196,9 +215,10 @@ ttfun -S quadrant-sep
 ttfun -S quadrant-sep -n
 ```
 
-```text
-!run:../target/release/ttfun -S quadrant-sep -n
-```
+!run:termframe -o img/ttfun_-S_quadrant-sep_-n.svg --font-family Iosevka -W 80 -H auto --line-height 1 --window false -- ../target/release/ttfun -S quadrant-sep -n 2>/dev/null
+!run:resvg img/ttfun_-S_quadrant-sep_-n.svg img/ttfun_-S_quadrant-sep_-n.png
+!run:rm img/ttfun_-S_quadrant-sep_-n.svg
+![](img/ttfun_-S_quadrant-sep_-n.png)
 
 ### Style `full`
 
@@ -206,9 +226,10 @@ ttfun -S quadrant-sep -n
 ttfun -S full
 ```
 
-```text
-!run:../target/release/ttfun -S full
-```
+!run:termframe -o img/ttfun_-S_full.svg --font-family Iosevka -W 80 -H auto --line-height 1 --window false -- ../target/release/ttfun -S full 2>/dev/null
+!run:resvg img/ttfun_-S_full.svg img/ttfun_-S_full.png
+!run:rm img/ttfun_-S_full.svg
+![](img/ttfun_-S_full.png)
 
 ### Style `full` inverted
 
@@ -216,9 +237,10 @@ ttfun -S full
 ttfun -S full -n
 ```
 
-```text
-!run:../target/release/ttfun -S full -n
-```
+!run:termframe -o img/ttfun_-S_full_-n.svg --font-family Iosevka -W 80 -H auto --line-height 1 --window false -- ../target/release/ttfun -S full -n 2>/dev/null
+!run:resvg img/ttfun_-S_full_-n.svg img/ttfun_-S_full_-n.png
+!run:rm img/ttfun_-S_full_-n.svg
+![](img/ttfun_-S_full_-n.png)
 
 ### Style `full-color`
 
@@ -226,9 +248,10 @@ ttfun -S full -n
 ttfun -S full-color
 ```
 
-```text
-!run:../target/release/ttfun -S full-color
-```
+!run:termframe -o img/ttfun_-S_full-color.svg --font-family Iosevka -W 80 -H auto --line-height 1 --window false -- ../target/release/ttfun -S full-color 2>/dev/null
+!run:resvg img/ttfun_-S_full-color.svg img/ttfun_-S_full-color.png
+!run:rm img/ttfun_-S_full-color.svg
+![](img/ttfun_-S_full-color.png)
 
 ### Style `full-color` inverted
 
@@ -236,9 +259,10 @@ ttfun -S full-color
 ttfun -S full-color -n
 ```
 
-```text
-!run:../target/release/ttfun -S full-color -n
-```
+!run:termframe -o img/ttfun_-S_full-color_-n.svg --font-family Iosevka -W 80 -H auto --line-height 1 --window false -- ../target/release/ttfun -S full-color -n 2>/dev/null
+!run:resvg img/ttfun_-S_full-color_-n.svg img/ttfun_-S_full-color_-n.png
+!run:rm img/ttfun_-S_full-color_-n.svg
+![](img/ttfun_-S_full-color_-n.png)
 
 ### Style `full-shade`
 
@@ -246,9 +270,10 @@ ttfun -S full-color -n
 ttfun -S full-shade
 ```
 
-```text
-!run:../target/release/ttfun -S full-shade
-```
+!run:termframe -o img/ttfun_-S_full-shade.svg --font-family Iosevka -W 80 -H auto --line-height 1 --window false -- ../target/release/ttfun -S full-shade 2>/dev/null
+!run:resvg img/ttfun_-S_full-shade.svg img/ttfun_-S_full-shade.png
+!run:rm img/ttfun_-S_full-shade.svg
+![](img/ttfun_-S_full-shade.png)
 
 ### Style `full-shade` inverted
 
@@ -256,9 +281,10 @@ ttfun -S full-shade
 ttfun -S full-shade -n
 ```
 
-```text
-!run:../target/release/ttfun -S full-shade -n
-```
+!run:termframe -o img/ttfun_-S_full-shade_-n.svg --font-family Iosevka -W 80 -H auto --line-height 1 --window false -- ../target/release/ttfun -S full-shade -n 2>/dev/null
+!run:resvg img/ttfun_-S_full-shade_-n.svg img/ttfun_-S_full-shade_-n.png
+!run:rm img/ttfun_-S_full-shade_-n.svg
+![](img/ttfun_-S_full-shade_-n.png)
 
 ### Demo
 
@@ -266,9 +292,10 @@ ttfun -S full-shade -n
 ttfun -d
 ```
 
-```text
-!run:../target/release/ttfun -d
-```
+!run:termframe -o img/ttfun_-d.svg --font-family Iosevka -W 80 -H auto --line-height 1 --window false -- ../target/release/ttfun -d 2>/dev/null
+!run:resvg img/ttfun_-d.svg img/ttfun_-d.png
+!run:rm img/ttfun_-d.svg
+![](img/ttfun_-d.png)
 
 ### Render `img/tree.webp`
 
@@ -280,9 +307,10 @@ ttfun -d
 ttfun -I img/tree.webp -r 0.25 -S octant-sep
 ```
 
-```text
-!run:../target/release/ttfun -I ../img/tree.webp -r 0.25 -S octant-sep
-```
+!run:termframe -o img/ttfun_-I_tree_webp_-r_025_-S_octant-sep.svg --font-family Iosevka -W 80 -H auto --line-height 1 --window false -- ../target/release/ttfun -I ../img/tree.webp -r 0.25 -S octant-sep 2>/dev/null
+!run:resvg img/ttfun_-I_tree_webp_-r_025_-S_octant-sep.svg img/ttfun_-I_tree_webp_-r_025_-S_octant-sep.png
+!run:rm img/ttfun_-I_tree_webp_-r_025_-S_octant-sep.svg
+![](img/ttfun_-I_tree_webp_-r_025_-S_octant-sep.png)
 
 ---
 
@@ -290,9 +318,10 @@ ttfun -I img/tree.webp -r 0.25 -S octant-sep
 ttfun -I img/tree.webp -r 0.125x0.0625 -S full-color
 ```
 
-```text
-!run:../target/release/ttfun -I ../img/tree.webp -r 0.125x0.0625 -S full-color
-```
+!run:termframe -o img/ttfun_-I_tree_webp_-r_0125x00625_-S_full-color.svg --font-family Iosevka -W 80 -H auto --line-height 1 --window false -- ../target/release/ttfun -I ../img/tree.webp -r 0.125x0.0625 -S full-color 2>/dev/null
+!run:resvg img/ttfun_-I_tree_webp_-r_0125x00625_-S_full-color.svg img/ttfun_-I_tree_webp_-r_0125x00625_-S_full-color.png
+!run:rm img/ttfun_-I_tree_webp_-r_0125x00625_-S_full-color.svg
+![](img/ttfun_-I_tree_webp_-r_0125x00625_-S_full-color.png)
 
 ---
 
@@ -300,9 +329,10 @@ ttfun -I img/tree.webp -r 0.125x0.0625 -S full-color
 ttfun -I img/tree.webp -r 0.125x0.0625 -S full-color -n
 ```
 
-```text
-!run:../target/release/ttfun -I ../img/tree.webp -r 0.125x0.0625 -S full-color -n
-```
+!run:termframe -o img/ttfun_-I_tree_webp_-r_0125x00625_-S_full-color_-n.svg --font-family Iosevka -W 80 -H auto --line-height 1 --window false -- ../target/release/ttfun -I ../img/tree.webp -r 0.125x0.0625 -S full-color -n 2>/dev/null
+!run:resvg img/ttfun_-I_tree_webp_-r_0125x00625_-S_full-color_-n.svg img/ttfun_-I_tree_webp_-r_0125x00625_-S_full-color_-n.png
+!run:rm img/ttfun_-I_tree_webp_-r_0125x00625_-S_full-color_-n.svg
+![](img/ttfun_-I_tree_webp_-r_0125x00625_-S_full-color_-n.png)
 
 # Library
 
