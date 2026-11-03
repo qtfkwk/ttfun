@@ -5,8 +5,14 @@
 * 0.2.0 (2026-11-02): Enable globs and stdin (`-`) for `input_files` and `input_images` (`-I`); update dependencies
   * 0.2.1 (2026-11-03): Fix descriptions for `-t` and `-n` options
 * 0.3.0 (2026-11-03): Add image-based readme for web (crates.io and github.com) and terminal output screenshots via [`termframe`] and [`resvg`]; previous readme is now at [`README-TERM.md`] and can view it in your terminal via `ttfun -R`
+  * 0.3.1 (2026-11-03): Add note to readme; fix reference link definitions; use a custom termframe theme
 
-[`README-TERM.md`]: README-TERM.md
-[`resvg`]: https://crates.io/crates/resvg
-[`termframe`]: https://github.com/pamburus/termframe
+[`README-TERM.md`]:
+README-TERM.md
+
+[`resvg`]:
+https://crates.io/crates/resvg
+
+[`termframe`]:
+https://github.com/pamburus/termframe
 

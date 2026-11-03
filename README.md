@@ -134,10 +134,19 @@ ttfun -V
 ```
 
 ```text
-ttfun 0.3.0
+ttfun 0.3.1
 ```
 
 ## Examples
+
+> [!WARNING]
+> As of version `0.3.0`, the actual text outputs for the examples were moved to [`README-TERM.md`]
+> and replaced with screenshot outputs captured via [`termframe`] and [`resvg`].
+> While they are better than viewing unsupported Unicode text block characters and terminal color
+> codes on a webpage, they still look a bit janky (slight gapping in all but it's especially bad in
+> the full-color examples).
+> For a pixel-perfect viewing experience, recommend viewing in terminal via `ttfun -R` or
+> `bat -pl md README-TERM.md`.
 
 ```bash
 ttfun
@@ -443,4 +452,13 @@ https://www.unicode.org/Public/latest/charts/nameslist/1fb00/
 
 [Symbols for Legacy Computing Supplement]:
 https://www.unicode.org/Public/latest/charts/nameslist/1cc00/
+
+[`README-TERM.md`]:
+README-TERM.md
+
+[`resvg`]:
+https://crates.io/crates/resvg
+
+[`termframe`]:
+https://github.com/pamburus/termframe
 
