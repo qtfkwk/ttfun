@@ -134,7 +134,7 @@ ttfun -V
 ```
 
 ```text
-ttfun 0.3.1
+ttfun 0.3.3
 ```
 
 ## Examples

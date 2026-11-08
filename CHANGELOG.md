@@ -7,6 +7,7 @@
 * 0.3.0 (2026-11-03): Add image-based readme for web (crates.io and github.com) and terminal output screenshots via [`termframe`] and [`resvg`]; previous readme is now at [`README-TERM.md`] and can view it in your terminal via `ttfun -R`
   * 0.3.1 (2026-11-03): Add note to readme; fix reference link definitions; use a custom termframe theme
   * 0.3.2 (2026-11-05): Regenerate terminal output screenshots after configuring [`termframe`] as [recommended](https://github.com/pamburus/termframe/issues/808#issuecomment-6646212688)
+  * 0.3.3 (2026-11-08): Regenerate terminal output screenshots after updating [`termframe`] as [recommended](https://github.com/pamburus/termframe/issues/808#issuecomment-6648533130)
 
 [`README-TERM.md`]:
 README-TERM.md
